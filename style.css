@@ -1,5 +1,4 @@
-
-:root{
+:root {
     --main-color: #d3ad7f;
     --black: #13131a;
     --bg: #010103;
@@ -8,7 +7,7 @@
     font-size: 10px;
 }
 
-*{
+* {
     margin: 0;
     padding: 0;
     outline: none;
@@ -17,13 +16,15 @@
     text-transform: capitalize;
     transition: 0.2s linear;
     font-family: "Roboto", sans-serif;
+    box-sizing: border-box;
 }
 
-body{
+body {
     background-color: var(--bg);
+    overflow-x: hidden;
 }
 
-header{
+header {
     position: fixed;
     top: 0;
     left: 0;
@@ -32,44 +33,47 @@ header{
     border-bottom: var(--border);
     background-color: var(--bg);
 }
-section{
+
+section {
     padding: 3rem 2rem;
     margin: 0 auto;
     max-width: 1200px;
-    
 }
 
-.header section{
+.header section {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-top: 1.5rem;
-    padding: 0.3rem;
-    
-    
-    
+    padding: 1rem 2rem;
 }
 
-.navbar a{
+.logo img {
+    height: 6rem;
+}
+
+.navbar a {
     margin: 0 1rem;
     font-size: 1.8rem;
     color: var(--branco);
 }
-.navbar a:hover{
+
+.navbar a:hover {
     color: var(--main-color);
     border-bottom: 0.1rem solid var(--main-color);
     padding-bottom: 0.5rem;
-    font-size: 2rem
 }
-.icons img{
-    margin: 1rem;
-    cursor: pointer
+
+.icons img {
+    margin: 0 1rem;
+    cursor: pointer;
 }
-.icons img:hover{
-    width: 40px;
-    height: 40px;
+
+.icons img:hover {
+    width: 35px;
+    height: 35px;
 }
-.btn{
+
+.btn, .btn-2 {
     background-color: var(--main-color);
     color: #fff;
     padding: 1rem 3rem;
@@ -77,31 +81,43 @@ section{
     cursor: pointer;
     margin-top: 1rem;
     display: inline-block;
+    border-radius: 5px;
 }
 
-.homer-container{
-    background: url("./img/home-img.jpg");
+.btn:hover, .btn-2:hover {
+    letter-spacing: 0.1rem;
+    background-color: #c19a6d;
+}
+
+.home-container {
+    background: url("./img/home-img.jpg") no-repeat;
     background-position: center;
     background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    margin-top: 7rem;
 }
-.homer-container section{
+
+.home-container section {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;
-    min-width: 100vh;
+    width: 100%;
 }
 
-.content{
+.home-container .content {
     max-width: 60rem;
+    text-align: center;
 }
 
-.content h3{
+.home-container .content h3 {
     color: #fff;
     font-size: 6rem;
+    text-transform: uppercase;
 }
 
-.content p {
+.home-container .content p {
     color: #fff;
     font-size: 2rem;
     font-weight: 100;
@@ -109,156 +125,250 @@ section{
     padding: 1rem 0;
 }
 
-.title{
+.title {
     font-size: 4rem;
     color: var(--main-color);
     text-align: center;
-    text-transform:uppercase;
-    margin-bottom: 2rem;
+    text-transform: uppercase;
+    margin-bottom: 3rem;
+    padding-top: 5rem;
 }
 
 .title span {
-  color: #ffff; 
-  text-transform:uppercase;
+    color: var(--branco);
+    text-transform: uppercase;
 }
 
 .about .row {
     display: flex;
     align-items: center;
     background-color: var(--black);
-    gap: 1.5rem;
+    gap: 2rem;
+    flex-wrap: wrap;
+    padding: 2rem;
+    border-radius: 1rem;
 }
 
+.about .row .container-image {
+    flex: 1 1 45rem;
+}
+
+.about .row .container-image img {
+    width: 100%;
+    border-radius: 1rem;
+}
 
 .about .row .content {
+    flex: 1 1 45rem;
     padding: 2rem;
 }
 
 .about .row .content h3 {
     font-size: 3rem;
-    color: #ffff;
+    color: var(--branco);
 }
 
 .about .row .content p {
     font-size: 1.6rem;
-    color: #ffff;
+    color: #ccc;
     padding: 1rem 0;
     line-height: 1.8;
 }
 
 p.destaque {
-  font-size: 2.5rem; 
-  font-weight: bold; 
-  text-align: center; 
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    color: var(--main-color);
+    margin: 2rem 0;
 }
-.center-button{
+
+.center-button {
     display: flex;
     justify-content: center;
-}
-.btn-2{
-    background-color: var(--main-color);
-    color: #fff;
-    padding: 1rem 3rem;
-    font-size: 1.7rem;
-    cursor: pointer;
-    margin-top: 1rem;
-    display: inline-block;
+    margin-top: 2rem;
 }
 
-.btn:hover{
-    letter-spacing: 0.1rem;
-}
-
-.menu .box-container{
+.menu .box-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
-    gap: 1.5rem;
+    gap: 2rem;
 }
 
-.menu .box-container .box{
+.menu .box-container .box {
     text-align: center;
     border: var(--border);
-    padding: 5rem;
-    cursor: pointer ;
+    padding: 3rem 2rem;
+    border-radius: 1rem;
+    cursor: pointer;
+    background-color: var(--black);
 }
 
-.menu .box-container .box:hover{
+.menu .box-container .box:hover {
     background-color: #fff;
 }
 
-  
 .menu .box-container .box img {
-    height: 10rem;
+    height: 15rem;
+    margin-bottom: 1rem;
 }
 
-.menu .box-container .box h3{
+.menu .box-container .box h3 {
     color: #fff;
-    font-size: 2rem;
+    font-size: 2.2rem;
     padding: 1rem 0;
 }
 
-.menu .box-container .box .price{
+.menu .box-container .box .price {
     color: #fff;
-    font-size: 2.5rem;
-    padding: 0.5rem;
-}
-.menu .box-container .box .price span{
-    font-size: 1.5rem;
-    text-decoration: line-through;
-    font-weight: lighter;
+    font-size: 2.2rem;
+    padding: 0.5rem 0;
 }
 
-.menu .box-container .box:hover>*{
+.menu .box-container .box .price span {
+    font-size: 1.8rem;
+    text-decoration: line-through;
+    font-weight: lighter;
+    color: #ccc;
+}
+
+.menu .box-container .box:hover > * {
     color: var(--black);
 }
 
-.review .box-container .box{
+.menu .box-container .box:hover .price span {
+    color: #666;
+}
+
+.review .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 2rem;
+}
+
+.review .box-container .box {
     border: var(--border);
     text-align: center;
     padding: 3rem 2rem;
+    border-radius: 1rem;
+    background-color: var(--black);
 }
 
-.review .box-container .box p{
-    font-size: 1.5rem;
-    color: #fff;
+.review .box-container .box .quote {
+    height: 5rem;
+    margin-bottom: 1rem;
+}
+
+.review .box-container .box p {
+    font-size: 1.6rem;
+    color: #ccc;
     padding: 2rem 0;
     line-height: 1.8;
     font-weight: lighter;
 }
 
-.review .box-container .box h3{
+.review .box-container .box .user {
+    height: 7rem;
+    width: 7rem;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-top: 1rem;
+}
+
+.review .box-container .box h3 {
     color: #fff;
     font-size: 2rem;
     margin: 1rem 0;
 }
 
-.review .box-container .box .user{
-    height: 7rem;
-    width: 7rem;
-    border-radius: 50%;
+.review .box-container .box .stars {
+    margin-top: 1rem;
 }
 
-.address{
-    display: flex;
-    align-items: center;
-    flex: content;
+.review .box-container .box .stars img {
+    margin: 0 0.2rem;
 }
 
-.footer{
+.address .map-container {
+    border-radius: 1rem;
+    overflow: hidden;
+    margin: 2rem 0;
+}
+
+.footer {
     text-align: center;
+    padding: 3rem 2rem;
+    background-color: var(--black);
+    margin-top: 3rem;
 }
 
-.footer .share{
-    padding: 1rem o;
+.footer .share {
+    padding: 1rem 0;
 }
 
-.footer .share img{
-    margin: 0.3rem;
-    cursor: pointer;
+.footer .share a {
+    display: inline-block;
+    margin: 0 1rem;
+}
+
+.footer .share img {
+    padding: 0.5rem;
     border-radius: 50%;
-    padding: 1rem;
+    background-color: var(--bg);
+    transition: 0.3s;
 }
 
-.footer .share img:hover{
+.footer .share img:hover {
     background-color: var(--main-color);
+    transform: rotate(360deg);
+}
+
+.footer p {
+    color: #fff;
+    font-size: 1.6rem;
+    margin-top: 2rem;
+}
+
+/* Responsividade */
+@media (max-width: 991px) {
+    .home-container .content h3 {
+        font-size: 4rem;
+    }
+    
+    .about .row {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 768px) {
+    .header section {
+        flex-direction: column;
+        padding: 1rem;
+    }
+    
+    .navbar {
+        margin: 1rem 0;
+    }
+    
+    .home-container .content h3 {
+        font-size: 3rem;
+    }
+    
+    .title {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 450px) {
+    .home-container .content h3 {
+        font-size: 2.5rem;
+    }git push origin main
+    
+    .home-container .content p {
+        font-size: 1.6rem;
+    }
+    
+    .title {
+        font-size: 2.5rem;
+    }
 }
